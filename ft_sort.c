@@ -27,8 +27,30 @@ void ft_sort_three(t_info *info)
         rra(info, 1);
 }
 
+void ft_sort_three_pivot(t_info *info)
+{
+}
+
+void ft_finish(t_info *info)
+{
+}
+
 void ft_sort_big(t_info *info)
 {
+    int min_a;
+    int min_b;
+
+    ft_sort_three_pivot(info);
+    while (info->st_a_size > 3)
+        pb(info, 1);
+    while (info->st_b_size)
+    {
+        min_a = INT_MAX;
+        min_b = INT_MAX;
+        find_best_move(info, &min_a, &min_b);
+        ft_rotate(info, min_a, min_b);
+    }
+    ft_finish(info);
 }
 
 void ft_sort(t_info *info)
