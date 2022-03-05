@@ -52,4 +52,17 @@ void push_front(int num, t_deque **top, t_deque **bot);
 int pop_back(t_deque **top, t_deque **bot, int *num);
 int pop_front(t_deque **top, t_deque **bot, int *num);
 
+/* push swap 연산 utility */
+void sa(t_info *info, int flag);
+void sb(t_info *info, int flag);
+void ss(t_info *info, int flag);
+void pa(t_info *info, int flag);
+void pb(t_info *info, int flag);
+void ra(t_info *info, int flag);
+void rb(t_info *info, int flag);
+void rr(t_info *info, int flag);
+void rra(t_info *info, int flag);
+void rrb(t_info *info, int flag);
+void rrr(t_info *info, int flag);
+
 #endif
