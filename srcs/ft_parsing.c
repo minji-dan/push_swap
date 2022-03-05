@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void print_error(int n)
 {
@@ -19,7 +19,7 @@ void ft_parsing(int argc, char **argv, t_info *info)
     i = 1;
     while (i < argc)
     {
-        if ()
+        if (!argv[i] || !is_digit(argv[i][strlen(argv[i]) - 1]))
             print_error(1);
         tmp = ft_split(argv[i], ' ');
         j = 0;

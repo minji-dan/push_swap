@@ -12,6 +12,5 @@ size_t ft_strlen(const char *src);
 void *ft_calloc(size_t count, size_t size);
 char **ft_split(char const *s, char c);
 int ft_strncmp(const char *s1, const char *s2, size_t n);
-char *get_next_line(int fd);
 
 #endif

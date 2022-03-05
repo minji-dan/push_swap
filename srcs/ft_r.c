@@ -1,4 +1,4 @@
-#include "push_swap.c"
+#include "../includes/push_swap.h"
 
 void ra(t_info *info, int flag)
 {
