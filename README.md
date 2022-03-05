@@ -36,10 +36,13 @@
 - **`pb`**(**push b**) : `a`의 가장 위에 있는 요소를 `b`의 가장 위에 넣는다. (`a`가 비었을 때는 아무것도 수행하지 않는다.)<br/>
 - **`ra`**(**rotate a**) : `a`의 모든 요소를 1만큼 위로 이동시킨다. 첫 번째 요소는 마지막 요소가 된다.<br/>
 - **`rb`**(**rotate b**) : `b`의 모든 요소를 1만큼 위로 이동시킨다. 첫 번째 요소는 마지막 요소가 된다.<br/>
-- **`rr`**: `ra`와 `rb`를 동시에 수행한다.<br/>
+- **`rr`**: `ra`와 `rb`를 동시에 수행한다. (ra → rb / rb → ra 의 명령어는 rr로 압축시킬 수 있다.)<br/>
 - **`rra`**(**reverse rotate a**) : `a`의 모든 요소를 1만큼 아래로 이동시킨다. 마지막 요소는 첫 번째 요소가 된다.<br/>
 - **`rrb`**(**reverse rotate b**) : `b`의 모든 요소를 1만큼 아래로 이동시킨다. 마지막 요소는 첫 번째 요소가 된다.<br/>
-- **`rrr`**: `rra`와 `rrb`를 동시에 수행한다<br/>
+- **`rrr`**: `rra`와 `rrb`를 동시에 수행한다. (rra → rrb / rrb → rra 의 명령어는 rrr로 압축시킬 수 있다.) <br/>
+  • rr → rrr / rrr → rr 순으로 실행되는 명령어는 불필요하므로 삭제시킬 수 있다.<br/>
+  • pa → pb / pb → pa / ra → rra / rb → rrb / sa → sa / sb → sb 와 같이 실행하나 마나 동일한 명령어 쌍은 삭제시킬 수 있다.<br/>
+  ![image](https://user-images.githubusercontent.com/69064310/156873891-c0497901-9e40-43a0-b1ae-697165b3412d.png)
 
 ---
 
@@ -75,3 +78,7 @@ flag 값이 1이면, "ra"("rb")를 출력하고 newline으로 끝내기<br/>
 
 pop_front 수행 성공 시, push_back<br/>
 flag 값이 1이면, "rra"("rrb")를 출력하고 newline으로 끝내기<br/>
+
+### 2022.03.05<br/>
+
+##### ft_free<br/>
