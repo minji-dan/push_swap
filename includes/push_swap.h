@@ -45,4 +45,11 @@ void free_all(t_info *info);
 void free_ptr(void *ptr);
 void free_vec(void **vec);
 
+/* deque utility */
+t_deque *create_node(int num);
+void push_back(int num, t_deque **top, t_deque **bot);
+void push_front(int num, t_deque **top, t_deque **bot);
+int pop_back(t_deque **top, t_deque **bot, int *num);
+int pop_front(t_deque **top, t_deque **bot, int *num);
+
 #endif
