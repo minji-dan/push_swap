@@ -72,6 +72,8 @@ flag 값이 1이면, "ss"("ss")를 출력하고 newline으로 끝내기<br/>
 pop_back 수행 성공 시, push_front<br/>
 flag 값이 1이면, "ra"("rb")를 출력하고 newline으로 끝내기<br/>
 
+---
+
 ### 2022.03.04<br/>
 
 ##### ft_rr <br/>
@@ -79,6 +81,10 @@ flag 값이 1이면, "ra"("rb")를 출력하고 newline으로 끝내기<br/>
 pop_front 수행 성공 시, push_back<br/>
 flag 값이 1이면, "rra"("rrb")를 출력하고 newline으로 끝내기<br/>
 
+---
+
 ### 2022.03.05<br/>
 
 ##### ft_free<br/>
+
+![image](https://user-images.githubusercontent.com/69064310/156880423-e9033100-4810-43fc-b3c3-a15a63e68a2d.png)
