@@ -7,7 +7,10 @@ SRCS		=	ft_bzero.c \
 				ft_strlen.c \
 				ft_calloc.c \
 				ft_split.c \
-				ft_stncmp.c
+				ft_stncmp.c \
+				is_space.c \
+				is_digit.c \
+				ft_atoll.c
 
 OBJS = ${SRCS:.c=.o}
 
