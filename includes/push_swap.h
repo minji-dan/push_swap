@@ -39,4 +39,10 @@ size_t ft_strlen(const char *src);
 void *ft_calloc(size_t count, size_t size);
 char **ft_split(char const *s, char c);
 
+/* free */
+void free_node(t_deque *node);
+void free_all(t_info *info);
+void free_ptr(void *ptr);
+void free_vec(void **vec);
+
 #endif
