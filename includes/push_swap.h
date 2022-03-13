@@ -48,6 +48,10 @@ void push_front(int num, t_deque **top, t_deque **bot);
 int pop_back(t_deque **top, t_deque **bot, int *num);
 int pop_front(t_deque **top, t_deque **bot, int *num);
 
+/* parsing */
+void print_error(int n);
+void ft_parsing(int argc, char **argv, t_info *info);
+
 /* presort merge 연산 */
 void make_array(t_info *info);
 void init_m_info(int low, int mid, int hight, t_merge *m_info);
@@ -67,5 +71,19 @@ void rr(t_info *info, int flag);
 void rra(t_info *info, int flag);
 void rrb(t_info *info, int flag);
 void rrr(t_info *info, int flag);
+
+/* rotate */
+void ft_finish(t_info *info);
+void find_best_move(t_info *info, int *min_a, int *min_b);
+void ft_rotate_rrr(t_info *info, int min_a, int min_b);
+void ft_rotate_rr(t_info *info, int min_a, int min_b);
+void ft_rotate(t_info *info, int min_a, int min_b);
+
+/* sort */
+void ft_sort_three(t_info *info);
+void ft_sort_three_pivot(t_info *info);
+void ft_sort_big(t_info *info);
+int find_max_stack(t_info *info);
+void ft_sort(t_info *info);
 
 #endif

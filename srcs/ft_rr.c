@@ -14,6 +14,8 @@ void rra(t_info *info, int flag)
 
 void rrb(t_info *info, int flag)
 {
+    int n;
+
     if (pop_front(&info->top_b, &info->bot_b, &n))
     {
         push_back(n, &info->top_b, &info->bot_b);
