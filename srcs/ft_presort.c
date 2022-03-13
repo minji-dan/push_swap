@@ -63,7 +63,7 @@ void mergeSort(int *a, int low, int hight) //배열의 요소 분할하는 함�
     }
 }
 
-void presort(t_info *info)
+void ft_presort(t_info *info)
 {
     int i;
 

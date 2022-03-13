@@ -45,6 +45,13 @@ void push_front(int num, t_deque **top, t_deque **bot);
 int pop_back(t_deque **top, t_deque **bot, int *num);
 int pop_front(t_deque **top, t_deque **bot, int *num);
 
+/* presort merge 연산 */
+void make_array(t_info *info);
+void init_m_info(int low, int mid, int hight, t_merge *m_info);
+void merge(int *a, int low, int mid, int hight);
+void mergeSort(int *a, int low, int hight);
+void ft_presort(t_info *info);
+
 /* push swap 연산 utility */
 void sa(t_info *info, int flag);
 void sb(t_info *info, int flag);
