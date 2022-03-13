@@ -9,28 +9,31 @@
 #define INT_MAX 2147483647
 #define INT_MIN -2147483648
 
-typedef struct s_data
-{
-    int num;
-} t_data;
-
 typedef struct s_deque
 {
-    t_data data;
+    int num;
     struct s_deque *prev;
     struct s_deque *next;
 } t_deque;
 
 typedef struct s_info
 {
-    int st_a_size;
-    int st_b_size;
-    t_deque *st_a_head;
-    t_deque *st_b_head;
-    t_deque *st_a_tail;
-    t_deque *st_b_tail;
+    int size_a;
+    int size_b;
+    t_deque *bot_a;
+    t_deque *bot_b;
+    t_deque *top_a;
+    t_deque *top_b;
     int *arr;
 } t_info;
+
+typedef struct s_merge
+{
+    int *b;
+    int low_index;
+    int mid_index;
+    int b_index;
+} t_merge;
 
 /* free */
 void free_node(t_deque *node);

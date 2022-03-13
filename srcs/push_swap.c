@@ -5,11 +5,11 @@ int check_already_sorted(t_info *info)
     t_deque *tmp;
     int i;
 
-    tmp = info->st_a_head;
+    tmp = info->bot_a;
     i = 0;
-    while (tmp && i < info->st_a_size)
+    while (tmp && i < info->size_a)
     {
-        if (info->arr[i] != tmp->data.num)
+        if (info->arr[i] != tmp->num)
             return (0);
         i++;
         tmp = tmp->next;
@@ -19,12 +19,12 @@ int check_already_sorted(t_info *info)
 
 void init_info(t_info *info)
 {
-    info->st_a_head = NULL;
-    info->st_b_head = NULL;
-    info->st_a_tail = NULL;
-    info->st_b_tail = NULL;
-    info->st_a_size = 0;
-    info->st_b_size = 0;
+    info->top_a = NULL;
+    info->top_b = NULL;
+    info->bot_a = NULL;
+    info->bot_b = NULL;
+    info->size_a = 0;
+    info->size_b = 0;
 }
 
 int main(int argc, char **argv)

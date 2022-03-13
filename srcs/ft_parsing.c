@@ -26,8 +26,8 @@ void ft_parsing(int argc, char **argv, t_info *info)
         while (tmp[j])
         {
             num = ft_atoll(tmp[j]);
-            push_back(num, &info->st_a_tail, &info->st_a_head);
-            info->st_a_size++;
+            push_back(num, &info->top_a, &info->bot_a);
+            info->size_a++;
             j++;
         }
         free_vec((void **)tmp);
