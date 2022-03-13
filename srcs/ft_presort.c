@@ -28,7 +28,7 @@ void merge(int *a, int low, int mid, int hight)
 {
     t_merge m_info;
 
-    init_m_info(low, mid, hight, *m_info);
+    init_m_info(low, mid, hight, &m_info);
     while (m_info.low_index <= mid && m_info.mid_index <= hight)
     {
         if (a[m_info.low_index] >= a[m_info.mid_index]) //분리된 왼쪽 배열과 오른쪽 배열 비교
