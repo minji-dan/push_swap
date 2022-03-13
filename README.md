@@ -88,3 +88,20 @@ flag 값이 1이면, "rra"("rrb")를 출력하고 newline으로 끝내기<br/>
 ##### ft_free<br/>
 
 ![image](https://user-images.githubusercontent.com/69064310/156880423-e9033100-4810-43fc-b3c3-a15a63e68a2d.png)
+
+---
+
+### 2022.03.13<br/>
+
+##### ft_presort<br/>
+
+mergeSort : 배열의 요소를 분할하는 함수<br/>
+
+> low < hight 이라면<br/>
+>
+> > low와 hight의 중간 값 구하고 <br/>
+> > 왼쪽 배열의 요소 분리 <br/>
+> > 오른쪽 배열 요소 분리 <br/>
+> > 분리된 배열 정렬 및 병합 함수 merge 수행 <br/>
+
+merge : 분리된 배열 정렬 및 병합 함수 <br/>
