@@ -73,7 +73,7 @@ void ft_presort(t_info *info)
     while (i < info->size_a)
     {
         if (info->arr[i] == info->arr[i - 1])
-            print_error();
+            print_error(1);
         i++;
     }
 }

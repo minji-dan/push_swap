@@ -6,9 +6,6 @@
 
 #include "../libft/libft.h"
 
-#define INT_MAX 2147483647
-#define INT_MIN -2147483648
-
 typedef struct s_deque
 {
     int num;
@@ -35,18 +32,18 @@ typedef struct s_merge
     int b_index;
 } t_merge;
 
-/* free */
-void free_node(t_deque *node);
-void free_all(t_info *info);
-void free_ptr(void *ptr);
-void free_vec(void **vec);
-
 /* deque utility */
 t_deque *create_node(int num);
 void push_back(int num, t_deque **top, t_deque **bot);
 void push_front(int num, t_deque **top, t_deque **bot);
 int pop_back(t_deque **top, t_deque **bot, int *num);
 int pop_front(t_deque **top, t_deque **bot, int *num);
+
+/* free */
+void free_node(t_deque *node);
+void free_all(t_info *info);
+void free_ptr(void *ptr);
+void free_vec(void **vec);
 
 /* parsing */
 void print_error(int n);
@@ -73,6 +70,12 @@ void rrb(t_info *info, int flag);
 void rrr(t_info *info, int flag);
 
 /* rotate */
+int is_between(int a, int b, int num);
+void find_pos_a(t_info *info, int num, int *a);
+void check_move_direc(t_info *info, int *a_move, int *b_move);
+int compare_move(int min_a, int min_b, int a_move, int b_move);
+void set_min_move(int *min_a, int *min_b, int a_move, int b_move);
+
 void ft_finish(t_info *info);
 void find_best_move(t_info *info, int *min_a, int *min_b);
 void ft_rotate_rrr(t_info *info, int min_a, int min_b);

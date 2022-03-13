@@ -19,7 +19,7 @@ void ft_parsing(int argc, char **argv, t_info *info)
     i = 1;
     while (i < argc)
     {
-        if (!argv[i] || !is_digit(argv[i][strlen(argv[i]) - 1]))
+        if (!argv[i] || !is_digit(argv[i][ft_strlen(argv[i]) - 1]))
             print_error(1);
         tmp = ft_split(argv[i], ' ');
         j = 0;

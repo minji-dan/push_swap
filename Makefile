@@ -4,8 +4,11 @@ CFLAG			= -Wextra -Wall -Werror
 RM				= rm -f
 AR				= ar cr
 
+MKDIR = @mkdir -p
+INCLUDE = -I ./includes
+
 SRCS_DIR		= ./srcs/
-SRCS =	ft_deque.c \
+SRCS = 	ft_deque.c \
 		ft_free.c \
 		ft_p.c \
 		ft_parsing.c \
@@ -19,7 +22,7 @@ SRCS =	ft_deque.c \
 		push_swap.c
 
 OBJS_DIR = ./objs/
-OBJS = $(SRCS: .c=.o)
+OBJS = $(SRCS:.c=.o)
 
 LIBFT			= libft
 LIBFT_FLAGS		= -L $(LIBFT) -lft
@@ -28,20 +31,9 @@ INC_FLAGS		= -I includes -I $(LIBFT)
 P_SRCS = $(addprefix $(SRCS_DIR), $(SRCS))
 P_OBJS = $(addprefix $(OBJS_DIR), $(OBJS))
 
-
 all: $(LIBFT) $(PUSH_SWAP) 
 
-$(LIBFT):
-	@make --silent --directory=$(LIBFT)
 
-$(PUSH_SWAP): $(P_OBJS)
-	$(CC) $(CFLAG) -o $(PUSH_SWAP) $(P_OBJS)
-
-
-
-bonus:
-	make WITH_BONUS=1 all
- 
 %.o: $(SRCS_DIR)%.c
 	$(CC) $(CFLAG) -c $< -o $@ $(INC_FLAGS)
 
@@ -53,5 +45,15 @@ fclean: clean
 	$(RM) $(PUSH_SWAP)
 
 re: fclean all
+
+$(LIBFT):
+	@make --silent --directory=$(LIBFT)
+
+$(PUSH_SWAP): $(P_OBJS)
+	$(CC) $(CFLAG) -o $(PUSH_SWAP) $(P_OBJS)
+
+$(OBJS_DIR)%.o: $(SRCS_DIR)%.c
+	$(MKDIR) $(OBJS_DIR)
+	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 .PHONY: all bonus clean fclean re $(LIBFT)

@@ -35,10 +35,9 @@ int main(int argc, char **argv)
     {
         init_info(&info);
         ft_parsing(argc, argv, &info);
-        preprocessing(&info);
+        ft_presort(&info);
         if (!check_already_sorted(&info)) //인자가 순서대로 들어오는 경우 아무것도 출력x
             ft_sort(&info);
-        print_deque(&info);
         free_all(&info);
     }
     return (0);

@@ -10,6 +10,7 @@ t_deque *create_node(int num)
     node->num = num;
     node->prev = NULL;
     node->next = NULL;
+    return (node);
 }
 
 void push_back(int num, t_deque **top, t_deque **bot)

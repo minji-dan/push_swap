@@ -9,18 +9,18 @@ void sa(t_info *info, int flag)
     {
         if (info->size_a != 2)
         {
-            pop_back(&info->top_a, &info->bot_a, &num);
-            push_front(num, &info->top_a, &info->bot_a);
+            temp = info->top_a->prev;
+            info->top_a->prev = temp->prev;
+            temp->prev->next = info->top_a;
+            temp->prev = info->top_a;
+            temp->next = NULL;
+            info->top_a->next = temp;
+            info->top_a = temp;
         }
         else
         {
-            temp = info->st_a_tail->prev;
-            info->st_a_tail->prev = temp->prev;
-            temp->prev->next = info->st_a_tail;
-            temp->prev = info->st_a_tail;
-            temp->next = NULL;
-            info->st_a_tail->next = temp;
-            info->st_a_tail = temp;
+            pop_back(&info->top_a, &info->bot_a, &num);
+            push_front(num, &info->top_a, &info->bot_a);
         }
         if (flag == 1)
             ft_putendl_fd("sa", 1);
@@ -41,13 +41,13 @@ void sb(t_info *info, int flag)
         }
         else
         {
-            temp = info->st_b_tail->prev;
-            info->st_b_tail->prev = temp->prev;
-            temp->prev->next = info->st_b_tail;
-            temp->prev = info->st_b_tail;
+            temp = info->top_b->prev;
+            info->top_b->prev = temp->prev;
+            temp->prev->next = info->top_b;
+            temp->prev = info->top_b;
             temp->next = NULL;
-            info->st_b_tail->next = temp;
-            info->st_b_tail = temp;
+            info->top_b->next = temp;
+            info->top_b = temp;
         }
         if (flag == 1)
             ft_putendl_fd("sb", 1);

@@ -1,10 +1,11 @@
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+size_t ft_strlen(const char *src)
 {
-    unsigned char *s_cur;
+    size_t len;
 
-    s_cur = s;
-    while (n--)
-        *s_cur++ = 0;
+    len = 0;
+    while (*src++)
+        len++;
+    return (len);
 }
